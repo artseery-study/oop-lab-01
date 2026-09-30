@@ -1,11 +1,11 @@
 public class Hero {
-    private String name;
-    private Point startPosition;
+    private final String name;
+    private Point currentPosition;
     private MoveStrategy moveStrategy;
 
-    public Hero(String name, Point startPosition, MoveStrategy moveStrategy) {
+    public Hero(String name, Point currentPosition, MoveStrategy moveStrategy) {
         this.name = name;
-        this.startPosition = startPosition;
+        this.currentPosition = currentPosition;
         setMoveStrategy(moveStrategy);
     }
 
@@ -13,7 +13,13 @@ public class Hero {
         this.moveStrategy = moveStrategy;
     }
 
-    public void move(Point target) {
+    public Point getCurrentPosition() {
+        return currentPosition;
+    }
 
+    public void move(Point targetPosition) {
+        System.out.print(name);
+        moveStrategy.move(currentPosition, targetPosition);
+        currentPosition = targetPosition;
     }
 }
