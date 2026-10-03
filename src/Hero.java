@@ -18,7 +18,7 @@ public class Hero {
     }
 
     public void move(Point targetPosition) {
-        System.out.print(name);
+        System.out.print(name + " ");
         moveStrategy.move(currentPosition, targetPosition);
         currentPosition = targetPosition;
     }

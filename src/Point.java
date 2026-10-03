@@ -15,6 +15,10 @@ public class Point {
         return y;
     }
 
+    public String getCoordinates() {
+        return "(" + x + ", " + y + ")";
+    }
+
     public int getDistance(Point targetPoint) {
         return (int) Math.hypot(targetPoint.x - x, targetPoint.y - y);
     }
